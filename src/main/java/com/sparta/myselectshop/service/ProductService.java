@@ -5,6 +5,8 @@ import com.sparta.myselectshop.dto.ProductRequestDto;
 import com.sparta.myselectshop.dto.ProductResponseDto;
 import com.sparta.myselectshop.entity.Product;
 import com.sparta.myselectshop.repository.ProductRepository;
+import java.util.ArrayList;
+import java.util.List;
 import javax.sound.sampled.Port;
 import lombok.RequiredArgsConstructor;
 import org.springframework.stereotype.Service;
@@ -34,5 +36,14 @@ public class ProductService {
 
     product.update(requestDto);
     return new ProductResponseDto(product);
+  }
+
+  public List<ProductResponseDto> getProducts() {
+    List<Product> productsList = productRepository.findAll();
+    List<ProductResponseDto> responseDtoList = new ArrayList<>();
+    for (Product product : productsList) {
+        responseDtoList.add(new ProductResponseDto(product));
+    }
+    return responseDtoList;
   }
 }
