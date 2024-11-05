@@ -7,7 +7,6 @@ import com.sparta.myselectshop.entity.Product;
 import com.sparta.myselectshop.repository.ProductRepository;
 import java.util.ArrayList;
 import java.util.List;
-import javax.sound.sampled.Port;
 import lombok.RequiredArgsConstructor;
 import org.springframework.stereotype.Service;
 import org.springframework.transaction.annotation.Transactional;
